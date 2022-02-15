@@ -172,28 +172,28 @@ let handler = async (m, { conn, usedPrefix: _p, command }) => {
            hydratedFooterText: wm,
            hydratedButtons: [{
              urlButton: {
-               displayText: 'source code',
-               url: `https://github.com/fvckreyz/AkaishimdP`
+               displayText: 'SOURCE CODE',
+               url: `https://github.com/fvckreyz`
              }
 
            },
              {
              callButton: {
-               displayText: '𝚙𝚑𝚘𝚗𝚎 𝚗𝚞𝚖𝚋𝚎𝚛',
+               displayText: 'PHONE NUMBER',
                PhoneNumber: '6285158338027'
              }
 
            },
                {
              quickReplyButton: {
-               displayText: '𝙳𝙴𝚅𝙴𝙻𝙾𝙿𝙴𝚁',
+               displayText: 'OWNER',
                id: '.owner',
              }
 
            },
                {
              quickReplyButton: {
-               displayText: '𝙶𝙴𝚃 𝙱𝙾𝚃',
+               displayText: 'PRICEBOT',
                id: '.donasi',
              }
 
