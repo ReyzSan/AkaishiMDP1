@@ -194,7 +194,7 @@ let handler = async (m, { conn, usedPrefix: _p, command }) => {
                {
              quickReplyButton: {
                displayText: 'PRICEBOT',
-               id: '.donasi',
+               id: '.price',
              }
 
            },
