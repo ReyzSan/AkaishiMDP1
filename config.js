@@ -31,7 +31,7 @@ global.APIKeys = { // APIKey Here
 
 lolkey = 'rey2k21'
 zekskey = 'apivinz'
-xteamkey = 'Apikey'
+xteamkey = '414f94a26f542444'
 leyskey = 'dappakntlll'
 bearkey = 'Apikey'
 ApiiKey = 'https://youtu.be/Sgb5BVOW66Y'
