@@ -19,7 +19,7 @@ let anu = `╭───❑ 「 BALANCE 」 ❑────
            hydratedContentText: anu,
            locationMessage: { 
            jpegThumbnail: fs.readFileSync('./media/bank.jpg') }, 
-           hydratedFooterText: 'tes',
+           hydratedFooterText: '┏━❒\n❒ Uptime: *%uptime (%muptime)*\n❒ Database: %rtotalreg dari %totalreg\n┗━━━━━━❒' ,
            hydratedButtons: [{
              urlButton: {
                displayText: 'Source Code',
