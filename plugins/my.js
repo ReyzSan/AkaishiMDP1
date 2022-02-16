@@ -5,14 +5,7 @@ let handler = async (m) => {
     if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.sender
     else who = m.sender
     let user = global.db.data.users[who]
-let anu = `╭───❑ 「 BALANCE 」 ❑────
-│ ✇ Name: ${user.name}
-│ ✇ Limit: ${user.limit}
-│ ✇ Money: ${user.money}
-│ ✇ Exp: ${user.exp}
-│ ✇ Level: ${user.level}
-│ ✇ Role: ${user.role}
-╰❑`
+let anu = `「 BALANCE 」`
 }
 let handler = async (m, { conn, usedPrefix: _p, command }) => {
   try {
@@ -36,7 +29,7 @@ let handler = async (m, { conn, usedPrefix: _p, command }) => {
            hydratedContentText: anu,
            locationMessage: { 
            jpegThumbnail: fs.readFileSync('./media/bank.jpg') }, 
-           hydratedFooterText: '┏━❒\n❒ Uptime: *%uptime (%muptime)*\n❒ Database: %rtotalreg dari %totalreg\n┗━━━━━━❒' ,
+           hydratedFooterText: '✇ Name: ${user.name}\n✇ Limit: ${user.limit}\n✇ Money: ${user.money}\n✇ Exp: ${user.exp}\n✇ Level: ${user.level}\n✇ Role: ${user.role}' ,
            hydratedButtons: [{
              urlButton: {
                displayText: 'Source Code',
