@@ -7,24 +7,16 @@ let handler = async (m) => {
     else who = m.sender
     let user = global.db.data.users[who]
 let premium = `
-*AkaishiMD PRICE*
-
-◩ *FREE USER*
-└───────
- └❎ Unlimited Limit
- └❎ Premium User 
- └❎ Add Bot to Group 
-  
-◩ *PREMIUM USER*
-└───────
- └✅ Unlimited Limit 
- └✅ Premium User 
-   └  ▹  *Rp. 5.000*
-     └ Expired 30 hari
- └❎ Add Bot to Group 
-   └  ▹  *Rp. 10.000*
-     └ Expired 30 hari
- └ Order | hub : owner
+┏━━━❒〔 *Price Bot* 〕❒━⬣
+❒ Hai
+❒ Ini Price Bot Nya :
+❒ Premium 5k/User
+❒ Masuk Ke Grup 10k/Bulan
+❒ 110Fitur Bot
+❒ Fitur RPG On
+❒ Nomor Bot : wa.me/6282138746029
+❒ Nomor Owner : wa.me/6285158338027
+┗━❒ Thank You
 `
      const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
      templateMessage: {

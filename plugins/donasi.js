@@ -8,20 +8,27 @@ let handler = async (m) => {
     else who = m.sender
     let user = global.db.data.users[who]
 let tqto = `
-┌〔 𝘿𝙤𝙣𝙖𝙨𝙞 • 𝙀𝙢𝙤𝙣𝙚𝙮 
-├ _GOPAY_ : *082138746029*
-└────`
+┏━━━❒〔 *DONASI* 〕❒━⬣
+❒ _SILAHKAN DONASI SEIKHLASNYA_
+❒ _SAWERIA :_ https://saweria.co/AkaishiMD
+❒ _GOPAY : 08213874629_
+❒ _SHOPEEPAY : 082138746029_
+❒ _PULSA : 085158338027 [BY.U]_
+❒ _110Fitur Bot_
+❒ _DONASIMU AKAN SANGAD BERHARGA BAGI OWNER_
+┗━❒ *THANK YOU*
+`
      const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
      templateMessage: {
          hydratedTemplate: {
            hydratedContentText: tqto,
            locationMessage: { 
-           jpegThumbnail: await (await fetch(`https://i.ibb.co/G2GT8QL/qr.jpg`)).buffer() }, 
+           jpegThumbnail: await (await fetch(`https://telegra.ph/file/25db94a3ad0969674c04a.jpg`)).buffer() }, 
            hydratedFooterText: wm,
            hydratedButtons: [{
              urlButton: {
-               displayText: 'SAWERIA',
-               url: 'https://saweria.co/AkaishiMD'
+               displayText: 'INFO LAINNYA',
+               url: 'https://telegra.ph/file/e2dd13c104964cc21c223.png'
              }
 
            },
