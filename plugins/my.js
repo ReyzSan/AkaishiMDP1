@@ -22,8 +22,8 @@ let anu = `╭───❑ 「 BALANCE 」 ❑────
            hydratedFooterText: wm,
            hydratedButtons: [{
              urlButton: {
-               displayText: 'source code',
-               url: `${ApiiKey}`
+               displayText: 'Saweria',
+               url: `https://saweria.co/AkaishiMD`
              }
 
            },
