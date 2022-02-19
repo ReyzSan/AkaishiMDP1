@@ -2,7 +2,7 @@ require('./config')
 const {
   useSingleFileAuthState,
   DisconnectReason
-} = require('@adiwajshing/baileys')
+} = require('@adiwajshing/baileys-md')
 const WebSocket = require('ws')
 const path = require('path')
 const fs = require('fs')
@@ -123,8 +123,8 @@ global.reloadHandler = function (restatConn) {
     conn.ev.off('creds.update', conn.credsUpdate)
   }
 
-  conn.welcome = 'Hai, @user!\nSelamat datang di grup *@subject*\n\n@desc'
-  conn.bye = 'Bye\nGoodbye @user! Leaving From *@subject*'
+  conn.welcome = 'Hai Sayangku, @user!\nSelamat datang di grup *@subject*\n\n@desc'
+  conn.bye = 'Yah kok out 😩 Mental aman kan kak >.<\nGoodbye @user! Leaving From *@subject*'
   conn.spromote = '@user sekarang admin!'
   conn.sdemote = '@user sekarang bukan admin!'
   conn.handler = handler.handler.bind(conn)
