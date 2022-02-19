@@ -3,20 +3,14 @@
 * ini cuma buat ninggalin credit gw doang :)
 **/
 
-const { default: makeWASocket, BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, downloadContentFromMessage, downloadHistory, proto, getMessage, generateWAMessageContent, prepareWAMessageMedia } = require('@adiwajshing/baileys-md')
+const { default: makeWASocket, BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, downloadContentFromMessage, downloadHistory, proto, getMessage, generateWAMessageContent, prepareWAMessageMedia } = require('@adiwajshing/baileys')
 let fetch = require('node-fetch')
 let fs = require('fs')
 let handler = async (m, { command }) => {
 bear = "Source Code"
 ye = `@${m.sender.split`@`[0]}`
 let esce = `
-Hai Sayangku ${ye} Lagi Nyari Sc Botkuh Yah:v
-
-Nih Link Sc Gua Dibawah :
-https://pastelink.net/v19Md
-
-_*Jangan Lupa Di Like Dan Subscribe Tod...!!!*_
-_*Gak Subscribe Gak Work Njingg...!!!*_`
+Ea`
      const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
      templateMessage: {
          hydratedTemplate: {
@@ -27,7 +21,7 @@ _*Gak Subscribe Gak Work Njingg...!!!*_`
            hydratedButtons: [{
              urlButton: {
                displayText: '𝙶𝙴𝚃 𝙱𝙾𝚃',
-               url: `${ApiiKey}`
+               url: `https://saweria.co/AkaishiMD`
              }
 
            },
