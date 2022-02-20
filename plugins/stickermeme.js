@@ -1,4 +1,5 @@
 const uploadImage = require('../lib/uploadImage')
+const { MessageType } = require('@adiwajshing/baileys')
 const { sticker } = require('../lib/sticker')
 let handler = async (m, { conn, text, usedPrefix, command }) => {
 
@@ -11,13 +12,16 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     let url = await uploadImage(img)
     meme = `https://api.memegen.link/images/custom/${encodeURIComponent(atas ? atas : '')}/${encodeURIComponent(bawah ? bawah : '')}.png?background=${url}`
     stiker = await sticker(false, meme, global.packname, global.author)
-     conn.sendFile(m.chat, stiker, '','',m)
+    if (stiker) await conn.sendMessage(m.chat, stiker, MessageType.sticker, {
+        quoted: m
+    })
 
 }
 handler.help = ['stikermeme <teks atas>|<teks bawah>']
 handler.tags = ['sticker']
 handler.command = /^(s(tic?ker)?meme)$/i
 
+handler.premium = true
 handler.limit = true
 
 module.exports = handler
