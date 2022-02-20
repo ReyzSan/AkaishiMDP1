@@ -1,33 +1,47 @@
-/**
-diupload oleh https://github.com/uhdahlah
-**/
+const axios = require('axios')
 
-let axios = require("axios");
-let handler = async(m, { conn, text }) => {
 
-    if (!text) return conn.reply(m.chat, 'Masukan Nama Daerah', m)
 
-  await m.reply('Searching...')
-	axios.get(`https://api.xteam.xyz/cuaca?kota=${text}&APIKEY=uhdahlah`).then ((res) => {
-	 	let hasil = `Cuaca Daerah *${text}*\n\nTempat : ${res.data.message.kota}\nAngin : ${res.data.message.angin}\nCuaca : ${res.data.message.cuaca}\nDeskripsi : ${res.data.message.deskripsi}\nKelembapan : ${res.data.message.kelembapan}\nSuhu : ${res.data.message.suhu}\nUdara : ${res.data.message.pressure}`
 
-    conn.reply(m.chat, hasil, m)
-	})
+let handler = async (m, { conn, args  , usedPrefix, command })=>{
+
+
+if(!args[0]) throw " please provide place or location name"
+
+    try{
+
+        const response = axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${args[0]}&units=metric&appid=060a6bcfa19809c2cd4d97a212b19273`)
+        const res = await response
+
+        const name = res.data.name
+        const Country = res.data.sys.country
+        const Weather= res.data.weather[0].description
+        const Temperature = res.data.main.temp + '°C'
+        const Minimum_Temperature= res.data.main.temp_min + '°C'
+        const Maximum_Temperature= res.data.main.temp_max + '°C'
+        const Humidity= res.data.main.humidity + '%'
+        const Wind= res.data.wind.speed + 'km/h'
+
+
+        let str = `
+        ───────────[ *Weather* ]───────────\n🏙️ *Place:* ${name}\n🌍 *Country:* ${Country}\n⛅ *Weather:* ${Weather}\n🌡️ *Temperature:* ${Temperature}\n❄️ *Minimum Temperature:* ${Minimum_Temperature}\n📛 *Maximum Temperature:* ${Maximum_Temperature}\n💧 *Humidity:* ${Humidity}\n🌬️ *Wind:* ${Wind}
+        `.trim()
+        conn.sendButton(m.chat, str, wm, '⋮☰ MENU', '.menu', m)
+    }catch(e){
+throw 'location not found' 
+console.log(e)
+
+    }
+
+
+
+
 }
-handler.help = ['cuaca'].map(v => v + ' <daerah>')
-handler.tags = ['tools']
-handler.command = /^(cuaca)$/i
-handler.owner = false
-handler.mods = false
-handler.premium = false
-handler.group = false
-handler.private = false
 
-handler.admin = false
-handler.botAdmin = false
-
-handler.fail = null
-handler.exp = 0
-handler.limit = true
+handler.help = ['weather']
+handler.tags = ['internet']
+handler.command = /^(weather|wthr|cuaca)$/i
 
 module.exports = handler
+
+let wm = global.botwm
